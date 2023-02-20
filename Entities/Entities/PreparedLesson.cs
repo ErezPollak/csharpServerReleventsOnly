@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+
+// Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
+// If you have enabled NRTs for your project, then un-comment the following line:
+// #nullable disable
+
+namespace Entities.Entities
+{
+    public partial class PreparedLesson
+    {
+        public PreparedLesson()
+        {
+            LearningFile = new HashSet<LearningFile>();
+            LessonsTaken = new HashSet<LessonsTaken>();
+        }
+
+        public decimal LessonId { get; set; }
+        public decimal? IndexPreparedLesson { get; set; }
+        public bool? IfAlowLesson { get; set; }
+        public decimal? CourseId { get; set; }
+
+        public virtual CoursesToClsss Course { get; set; }
+        public virtual ICollection<LearningFile> LearningFile { get; set; }
+        public virtual ICollection<LessonsTaken> LessonsTaken { get; set; }
+    }
+}
