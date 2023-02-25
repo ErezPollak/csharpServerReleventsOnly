@@ -73,7 +73,7 @@ namespace DAL.Students
 
         public async Task<Student> getStudentAccordingToIDDAL(string studentID)
         {
-            var resStudent = await _context.Student.Where(x => x.IdentitiyNumber == studentID).FirstOrDefaultAsync();
+            var resStudent = await _context.Student.Where(x => x.StudentId == int.Parse(studentID)).FirstOrDefaultAsync();
             if (resStudent != null)
             {
                 return resStudent;

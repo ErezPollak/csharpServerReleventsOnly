@@ -66,7 +66,7 @@ namespace A_ServerVirtualScool.Controllers
         [Route("api/getStudentAccordingToID/{StudentID}")]
         public async Task<ActionResult<Student>> getStudentAccordingToID(string StudentID)
         {
-            var s = _studentStor.getStudentAccordingToIDDAL(StudentID);
+                var s = await _studentStor.getStudentAccordingToIDDAL(StudentID);
             if (s != null)
             {
                 var obj = new
